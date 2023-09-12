@@ -1,18 +1,20 @@
 import React, { useState, useEffect } from 'react';
 
-export default function Question({ question, currentQuestionIndex }) {
+export default function Question({ question, currentQuestionIndex, setScore, score }) {
     const [answers, setAnswers] = useState([]);
-    
     const [isCorrect, setIsCorrect] = useState(null);
 
     const checkAnswer = (answer) => {
         if (answer === question.correct_answer) {
             console.log('correct');
             setIsCorrect(true);
+            setScore(score + 1);
+            
         } else {
             console.log('incorrect');
             setIsCorrect(false);
         }
+
     };
 
     useEffect(() => {
@@ -22,6 +24,7 @@ export default function Question({ question, currentQuestionIndex }) {
             newAnswers.sort(() => Math.random() - 0.5);
             setAnswers(newAnswers);
         }
+        setIsCorrect(null);
         console.log(question);
     }, [question]);
 
@@ -37,6 +40,8 @@ export default function Question({ question, currentQuestionIndex }) {
                     </li>
                 ))}
             </ul>
+            {isCorrect === true && <p>Correct!</p>}
+            {isCorrect === false && <p>Incorrect!</p>}
         </div>
     );
 }

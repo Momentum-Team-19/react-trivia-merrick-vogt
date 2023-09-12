@@ -20,11 +20,11 @@ Doing this project, you will...
 
 This list is not necessarily in the order in which you should build these parts of the application.
 
-- When the application loads, a user can see a list of possible trivia categories so that they can choose one to start a quiz in that category.
-- A user can select a category and start a quiz in that category. A quiz should have at least 10 questions in it.
-- A quiz shows the user one question at a time, with its possible answers shown in a random order so that the correct answer isn't in the same place every time.
-- A user can select an answer to a question and can see some visual feedback that they selected an answer.
-- The user progresses through each question in the category, choosing their answer, until they reach the end of the questions.
+Complete - When the application loads, a user can see a list of possible trivia categories so that they can choose one to start a quiz in that category.
+Complete - A user can select a category and start a quiz in that category. A quiz should have at least 10 questions in it.
+Complete - A quiz shows the user one question at a time, with its possible answers shown in a random order so that the correct answer isn't in the same place every time.
+Complete - A user can select an answer to a question and can see some visual feedback that they selected an answer.
+Complete - The user progresses through each question in the category, choosing their answer, until they reach the end of the questions.
 - After a user has answered all the questions in a category, they can see how many questions they answered correctly, or some kind of score. Optionally, show them which questions they got right and which ones they got wrong.
 - A user can go back to the list of categories and start a new quiz in a different category.
 
