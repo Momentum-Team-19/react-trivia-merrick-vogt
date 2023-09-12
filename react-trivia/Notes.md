@@ -2,21 +2,21 @@
 
 ## Home Page
 
-- Display Categories (Fetch from API)
-- Button on Categories to Start Quiz in that category
+complete - Display Categories (Fetch from API)
+complete - Button on Categories to Start Quiz in that category
 
 ## Quiz Component
 
 ### State
 
-- `currentQuestionIndex` (index of current question)
-- `category` (current category of questions)
+complete - `currentQuestionIndex` (index of current question)
+complete - `category` (current category of questions)
 - `score` (current user score)
-- `questions` (array of questions to be asked)
+complete - `questions` (array of questions to be asked)
 
 ### Methods
 
-- `nextQuestion()` (proceed to the next question)
+complete - `nextQuestion()` (proceed to the next question)
 - `checkAnswer()` (check if the user-selected answer is correct)
 
 ### Render
