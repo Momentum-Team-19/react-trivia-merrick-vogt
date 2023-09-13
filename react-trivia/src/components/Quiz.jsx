@@ -47,13 +47,15 @@ export default function Quiz({ selectedCategory }) {
 
   if (!isFinished) {
     return (
-      <div className="bg-blue-900 text-white min-h-screen flex flex-col items-center justify-center">
+      <div className="border-white border-solid border-2 bg-blue-900 text-white rounded-lg flex flex-col items-center justify-center w-[60%]">
         {isLoadingQuestions ? (
           <p>Loading questions...</p>
         ) : (
-          <div>
-            <h1 className="text-4xl mb-6">{selectedCategory.name}</h1>
-            <div className="bg-blue-700 text-white p-6 rounded-lg w-[80%]">
+          <div className="flex flex-col items-center justify-center flex-grow mt-3 mb-6">
+            <h1 className="text-4xl my-3">{selectedCategory.name}</h1>
+            <div style={{ width: '80%' }} 
+                 className="bg-blue-700 text-white p-6 flex flex-col items-center justify-center rounded-lg w-4/5 flex-grow overflow-y-auto">
+              
               {questions.length > 0 && currentQuestionIndex < questions.length ? (
                 <div>
                   <Question

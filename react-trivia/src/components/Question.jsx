@@ -36,7 +36,7 @@ export default function Question({
   return (
     <div>
       <p
-        className="flex justify-center"
+        className=""
         dangerouslySetInnerHTML={{ __html: question.question }}
       ></p>
       <ul>

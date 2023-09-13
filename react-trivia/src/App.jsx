@@ -22,7 +22,7 @@ function App() {
   if (selectedCategory === null) {
     content = (
       <div className="">
-        <div className="bg-blue-900 rounded-lg p-2 inline-block">
+        <div className="border-white border-solid border-2 bg-blue-700 text-white font-bold mb-4 pt-3 rounded">
           <h2 className="text-center text-2xl text-white font-semibold mb-4">Choose a Category</h2>
         </div>
           <div className="grid grid-cols-2 gap-y-8 gap-x-64">
