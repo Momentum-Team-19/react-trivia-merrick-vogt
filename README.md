@@ -25,18 +25,18 @@ Complete - A user can select a category and start a quiz in that category. A qui
 Complete - A quiz shows the user one question at a time, with its possible answers shown in a random order so that the correct answer isn't in the same place every time.
 Complete - A user can select an answer to a question and can see some visual feedback that they selected an answer.
 Complete - The user progresses through each question in the category, choosing their answer, until they reach the end of the questions.
-- After a user has answered all the questions in a category, they can see how many questions they answered correctly, or some kind of score. Optionally, show them which questions they got right and which ones they got wrong.
-- A user can go back to the list of categories and start a new quiz in a different category.
+Complete - After a user has answered all the questions in a category, they can see how many questions they answered correctly, or some kind of score. Optionally, show them which questions they got right and which ones they got wrong.
+Complete - A user can go back to the list of categories and start a new quiz in a different category.
 
 ## Project Requirements
 
 - The application makes use of 3 or more components.
-- The application has two or more "screens." In a traditional web application, we'd think of these as different pages.
-- The application uses React's state to manage data.
-- The application uses the Open Trivia Database API.
+Complete - The application has two or more "screens." In a traditional web application, we'd think of these as different pages.
+Complete - The application uses React's state to manage data.
+Complete - The application uses the Open Trivia Database API.
 - The application is styled in a way that enhances its usability and functionality.
 - The application includes at least one one spicy option from the list.
-- You can explain how your application works and why you made the design decisions you did.
+Complete - You can explain how your application works and why you made the design decisions you did.
 
 ## How to start
 

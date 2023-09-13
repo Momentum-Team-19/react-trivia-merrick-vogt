@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './index.css';
 import Quiz from './components/Quiz';
+import Header from './components/Header';  
+import millionaireBackground from './assets/millionaire.png';
+
 
 function App() {
   const [categories, setCategories] = useState([]);
@@ -18,25 +21,45 @@ function App() {
 
   if (selectedCategory === null) {
     content = (
-      <div className="bg-blue-900 text-white min-h-screen flex flex-col items-center justify-center">
-        <h1 className="text-4xl mb-6">Who wants to be a Millionaire??</h1>
-        <div className="bg-blue-700 text-white p-6 rounded-lg">
-          <h2 className="text-2xl mb-4">Categories</h2>
-          <ul>
-            {categories.map((category) => (
-              <li key={category.id} className="mb-2">
-                <button onClick={() => setSelectedCategory(category)}>{category.name}</button>
-              </li>
-            ))}
-          </ul>
+      <div className="">
+        <div className="bg-blue-900 rounded-lg p-2 inline-block">
+          <h2 className="text-center text-2xl text-white font-semibold mb-4">Choose a Category</h2>
         </div>
+          <div className="grid grid-cols-2 gap-y-8 gap-x-64">
+            {categories.map((category) => (
+              
+              <button key={category.id} onClick={() => setSelectedCategory(category)}
+                      className="border-white border-solid border-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+              >{category.name}</button>
+              
+            ))}
+          </div>
+        
       </div>
     );
   } else {
-    content = <Quiz selectedCategory={selectedCategory} />; // render the Quiz component  
+    content = <Quiz selectedCategory={selectedCategory} />;
   }
 
-  return content;
+  return (
+  <div className="min-h-screen max-h-screen overflow-hidden flex flex-col">
+    <Header className="z-10" />
+    <div
+      style={{
+        backgroundImage: `url(${millionaireBackground})`,
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: 'center center',
+      }}
+      className="flex-grow text-white flex items-center justify-center"
+    >
+      {content}
+    </div>
+  </div>
+
+
+
+  );
 }
 
 export default App;

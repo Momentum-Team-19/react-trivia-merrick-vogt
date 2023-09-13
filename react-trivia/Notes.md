@@ -1,5 +1,36 @@
 # Who wants to be a Millionaire?
 
+- ToDo
+- complete - ChatGPT
+
+Primary
+- Header
+- Footer
+- Better Home Page UI
+- Better Quiz / Question UI
+- Skeleton Loading for categories 
+- Skeleton Loading for quiz + questions
+
+Secondary
+- Breakdown into more components
+- User See score
+- Win Condition
+- Animation / Interactions
+- Timer in quiz
+
+3rd
+- Store scores in local storage?
+- Save session token for new questions?
+- Average Score for categories
+- Earn badges with perfect score
+
+Extras
+- Implement social share feature
+- next and back buttons
+- pagination
+- Add react library
+
+
 ## Home Page
 
 complete - Display Categories (Fetch from API)

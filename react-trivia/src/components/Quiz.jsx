@@ -8,13 +8,27 @@ export default function Quiz({ selectedCategory }) {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [score, setScore] = useState(0);
   const [isFinished, setIsFinished] = useState(false);
+  const [reload, setReload] = useState(false);
+
+  const handlePlayAgain = () => {
+    setReload(!reload);  // Toggle reload state to trigger useEffect
+    setCurrentQuestionIndex(0);
+    setScore(0);
+    setIsFinished(false); // Reset isFinished state to false
+    console.log("Play Again:", reload);
+  };
 
   const checkFinishedQuiz = () => {
     if (currentQuestionIndex === questions.length - 1) {
         setIsFinished(true);
     }
     console.log("Finished Quiz:", isFinished);
-    };
+  };
+
+  useEffect(() => {
+    checkFinishedQuiz();
+  }, [currentQuestionIndex]);
+
 
   useEffect(() => {
     console.log("Current Score:", score);
@@ -29,7 +43,7 @@ export default function Quiz({ selectedCategory }) {
         setQuestions(response.data.results);
         setIsLoadingQuestions(false);
       });
-  }, [selectedCategory]);
+  }, [selectedCategory, reload]);
 
   if (!isFinished) {
     return (
@@ -67,6 +81,9 @@ export default function Quiz({ selectedCategory }) {
     return (
       <div className="bg-blue-900 text-white min-h-screen flex flex-col items-center justify-center">
         <h1 className="text-4xl mb-6">You scored {score} out of {questions.length}!</h1>
+        <button className="bg-blue-500 text-white font-bold py-2 px-4 rounded" onClick={handlePlayAgain}>Play Again</button>
+        <button className="bg-blue-500 text-white font-bold py-2 px-4 rounded" onClick={() => window.location.reload()}>Play New Category</button>
+        
       </div>
     );
   }
