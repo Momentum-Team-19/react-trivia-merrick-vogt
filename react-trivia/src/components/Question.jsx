@@ -51,7 +51,9 @@ export default function Question({
       </ul>
       {isCorrect === true && <p>Correct!</p>}
       {isCorrect === false && <p>Incorrect!</p>}
-      {<Llm />}
+      {<Llm 
+        question={question}
+      />}
     </div>
   );
 }

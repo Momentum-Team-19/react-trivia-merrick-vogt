@@ -41,13 +41,14 @@ export default function Quiz({ selectedCategory }) {
       )
       .then((response) => {
         setQuestions(response.data.results);
+        setCurrentQuestionIndex(0);
         setIsLoadingQuestions(false);
       });
   }, [selectedCategory, reload]);
 
   if (!isFinished) {
     return (
-      <div className="border-white border-solid border-2 bg-blue-900 text-white rounded-lg flex flex-col items-center justify-center w-[60%]">
+      <div className="border-white border-solid border-2 bg-blue-900 text-white rounded-lg flex flex-col items-center justify-center h-[40%] w-[60%]">
         {isLoadingQuestions ? (
           <p>Loading questions...</p>
         ) : (
@@ -81,10 +82,10 @@ export default function Quiz({ selectedCategory }) {
     );
   } else {
     return (
-      <div className="bg-blue-900 text-white min-h-screen flex flex-col items-center justify-center">
-        <h1 className="text-4xl mb-6">You scored {score} out of {questions.length}!</h1>
-        <button className="bg-blue-500 text-white font-bold py-2 px-4 rounded" onClick={handlePlayAgain}>Play Again</button>
-        <button className="bg-blue-500 text-white font-bold py-2 px-4 rounded" onClick={() => window.location.reload()}>Play New Category</button>
+      <div className="bg-blue-900 border-white border-solid border-2 rounded-lg text-white flex flex-col items-center justify-center">
+        <h1 className="text-4xl mt-4 mx-4 mb-2 ">You scored {score} out of {questions.length}!</h1>
+        <button className="bg-blue-500 text-white font-bold my-4 py-2 px-4 rounded" onClick={handlePlayAgain}>Play Again</button>
+        <button className="bg-blue-500 text-white font-bold mb-4 py-2 px-2 rounded" onClick={() => window.location.reload()}>Play New Category</button>
         
       </div>
     );

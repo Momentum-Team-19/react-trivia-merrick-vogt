@@ -1,14 +1,12 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
-const Llm = () => {
-  const [prompt, setPrompt] = useState('');
+const Llm = ({ question }) => {
+  
   const [output, setOutput] = useState('');
 
-  const handlePromptChange = (e) => {
-    setPrompt(e.target.value);
-  };
+ 
 
-  const handleSubmit = async () => {
+  const handleSubmit = async () => { 
     try {
       const messages = [
         {
@@ -17,7 +15,7 @@ const Llm = () => {
         },
         {
           "role": "user",
-          "content": prompt // this captures the user input
+          "content": question.question // this captures the user input
         }
       ];
       const payload = {
@@ -29,7 +27,7 @@ const Llm = () => {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': 'Bearer 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',  // Replace with your actual API key
+          'Authorization': 'Bearer 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',  // Replace with your actual API key
         },
         body: JSON.stringify(payload),
       });
@@ -40,12 +38,16 @@ const Llm = () => {
       console.error('Error:', error);
     }
   };
+
+  useEffect(() => {
+    setOutput('');
+  }, [question]);
   
   
   return (
     <div>
-      <input type="text" value={prompt} onChange={handlePromptChange} className="text-black"/>
-      <button onClick={handleSubmit}>Generate</button>
+      
+      <button className="m-2 bg-blue-500 text-white font-bold py-2 px-4 rounded" onClick={handleSubmit}>Ask ChatGPT</button>
       <div>{output}</div>
     </div>
   );
