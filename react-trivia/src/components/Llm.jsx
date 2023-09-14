@@ -27,7 +27,7 @@ const Llm = ({ question }) => {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': 'Bearer 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',  // Replace with your actual API key
+          'Authorization': 'Bearer ',  // Replace with your actual API key
         },
         body: JSON.stringify(payload),
       });
