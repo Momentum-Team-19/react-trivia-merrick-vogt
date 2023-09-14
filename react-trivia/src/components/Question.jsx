@@ -13,11 +13,11 @@ export default function Question({
 
   const checkAnswer = (answer) => {
     if (answer === question.correct_answer) {
-      console.log("correct");
+      
       setIsCorrect(true);
       setScore(score + 1);
     } else {
-      console.log("incorrect");
+      
       setIsCorrect(false);
     }
   };
@@ -30,7 +30,7 @@ export default function Question({
       setAnswers(newAnswers);
     }
     setIsCorrect(null);
-    console.log(question);
+    
   }, [question]);
 
   return (

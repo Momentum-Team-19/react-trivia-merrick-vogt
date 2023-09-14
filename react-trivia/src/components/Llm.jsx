@@ -32,7 +32,7 @@ const Llm = ({ question }) => {
         body: JSON.stringify(payload),
       });
       const data = await response.json();
-      console.log(data);
+      
       setOutput(data.choices[0].message.content); // Assuming 'choices' exists in the response
     } catch (error) {
       console.error('Error:', error);
