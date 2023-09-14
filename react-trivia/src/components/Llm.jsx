@@ -27,7 +27,7 @@ const Llm = ({ question }) => {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': 'Bearer ',  // Replace with your actual API key
+          'Authorization': `Bearer ${import.meta.env.VITE_CHATGPT_SECRET_KEY}`,  // Replace with your actual API key
         },
         body: JSON.stringify(payload),
       });
